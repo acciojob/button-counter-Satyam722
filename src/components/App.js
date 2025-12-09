@@ -1,13 +1,21 @@
+import React, { useState } from 'react';
 
-import React from "react";
-import './../styles/App.css';
+const ButtonCounter = () => {
+  // Initialize state with useState hook
+  const [count, setCount] = useState(0);
 
-const App = () => {
+  // Event handler to increment counter
+  const handleClick = () => {
+    setCount(count + 1);
+  };
+
   return (
     <div>
-        {/* Do not remove the main div */}
+      {/* Display the count dynamically */}
+      <p>Button clicked {count} times</p>
+      <button onClick={handleClick}>Click me</button>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default ButtonCounter;
